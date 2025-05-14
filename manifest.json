@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Blindspot",
+  "description": "SXO Auditor - SEO, Copywriting, and Design analysis powered by AI + Google Search Console",
+  "version": "1.0.0",
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "sidePanel",
+    "identity",
+    "storage",
+    "scripting"
+  ],
+  "oauth2": {
+    "client_id": "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/webmasters.readonly"
+    ]
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon-16.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    },
+    "default_title": "Open Blindspot"
+  },
+  "side_panel": {
+    "default_path": "sidepanel/index.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "host_permissions": [
+    "https://www.googleapis.com/*",
+    "https://searchconsole.googleapis.com/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
